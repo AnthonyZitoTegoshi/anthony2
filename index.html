@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <title>Anthony Zito Tegoshi</title>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        #presentation {
+            background-image: url("fundo1.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #foto {
+            width: 8rem;
+            height: 8rem;
+            background-image: url("foto_do_anthony.jpg");
+            background-size: cover;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            scrollTo(0, 0);
+            $("header > nav").hide();
+            $(window).scroll(function () {
+                if (scrollY == 0) {
+                    $("header > nav").fadeOut();
+                } else {
+                    $("header > nav").fadeIn();
+                }
+            });
+            $("#startNavigation").click(function(){
+                scrollTo(0, $("#startMarker").offset().top);
+            });
+        });
+    </script>
+</head>
+<body class="bg-light">
+    <span id="topMarker"></span>
+    <header class="container fixed-top" id="header">
+        <nav style="border-radius: 10px; box-shadow: 0 0 20px 0 #000;" class="navbar navbar-expand-sm navbar-light bg-light p-2 m-2 justify-content-between">
+            <a href="#topMarker" class="navbar-brand pl-2">Anthony Zito Tegoshi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#startMarker" class="nav-link">Gostos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#achievementMarker" class="nav-link">Conquistas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#planMarker" class="nav-link">Planos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <section id="presentation" style="height: 100vh;" class="row justify-content-center align-content-center">
+            <div style="height: max-content; border-radius: 20px; box-shadow: 0 0 20px 0 #000;" class="col col-sm-10 col-md-8 col-lg-6 col-4-xl mx-4 bg-light p-4">
+                <div class="row justify-content-center justify-content-sm-start">
+                    <div class="mx-3 mb-3 rounded-circle border border-dark" id="foto"></div>
+                    <div class="col-12 col-sm">
+                        <h3 class="text-center text-sm-left mb-4">Anthony Zito Tegoshi</h3>
+                        <p class="text-center text-sm-left">Nascido em 30 de março de 2004</p>
+                        <p class="text-center text-sm-left">Estudante de Informática para Internet no IFSP - Guarulhos</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-sm-end">
+                    <button type="button" class="btn btn-primary mx-3 mt-3" id="startNavigation">Saiba mais</button>
+                </div>
+            </div>
+        </section>
+        <div id="startMarker"></div>
+        <section class="card-deck mt-5">
+            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus gostos</h2>
+            <div class="card">
+                <img class="card-img-top" src="dnd.jpg" alt="Dungeons and Dragons">
+                <div class="card-body">
+                    <p class="card-text">Gosto de assistir vídeos aleatórios de linux e RPG, programar e jogar</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="parkour.jpg" alt="Meme de parkour">
+                <div class="card-body">
+                    <p class="card-text">Gosto de lutar judô, nadar e praticar qualquer outra atividade física (menos aquelas como futebol, vôlei, basquete e etc)</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="desafio.png" alt="Pessoa se desafiando">
+                <div class="card-body">
+                    <p class="card-text">Gosto de desafios físicos e mentais, apesar de ser preguiçoso quando aquilo não me é interessante</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="eletronica.jpg" alt="Placa eletrônica">
+                <div class="card-body">
+                    <p class="card-text">Tenho um grande interesse em tecnologia eletrônica e qualquer outro conhecimento físico, químico e/ou matemático</p>
+                </div>
+            </div>
+        </section>
+        <div id="achievementMarker"></div>
+        <section class="card-deck mt-5">
+            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Minhas conquistas</h2>
+            <div class="card">
+                <img class="card-img-top" src="medalhas.jpg" alt="Coleção de medalhas">
+                <div class="card-body">
+                    <p class="card-text">Já juntei mais de 120 medalhas de judô/natação e, se não me engano, já fui vice-campeão inter-regional de judô</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="flutter.png" alt="Flutter">
+                <div class="card-body">
+                    <p class="card-text">Comecei a gostar de informática quando entrei no IF e agora já consegui um estágio desenvolvendo apps em flutter</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="olimpiada.png" alt="OBMEP">
+                <div class="card-body">
+                    <p class="card-text">Já ganhei diversas medalhas e participações em olimpíadas escolares, sendo que a mais recente foi a "chave de prata" da IPhCO 2021</p>
+                </div>
+            </div>
+        </section>
+        <div id="planMarker"></div>
+        <section class="card-deck my-5">
+            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus planos</h2>
+            <div class="card">
+            <div class="card-body">
+                <p class="card-text">- Eu pretendo continuar meus estudos na área de tecnologia, principalmente informática/eletrônica.</p>
+                <p class="card-text">- Eu também quero continuar aprimorando meu inglês, japonês, soft skills e quaisquer outras coisas necessárias para ser competitivo no mercado de trabalho</p>
+            </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
