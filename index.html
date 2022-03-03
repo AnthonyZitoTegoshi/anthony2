@@ -26,16 +26,35 @@
             background-image: url("foto_do_anthony.jpg");
             background-size: cover;
         }
+        .appear {
+            position: relative;
+            display: block;
+        }
     </style>
     <script>
         $(document).ready(function () {
+            var appears = document.getElementsByClassName("appear");
+            var canAppear = false;
+            $('.appear').animate({
+                left: "-" + innerWidth + "px"
+            });
             scrollTo(0, 0);
             $("header > nav").hide();
             $(window).scroll(function () {
                 if (scrollY == 0) {
                     $("header > nav").fadeOut();
-                } else {
+                    canAppear = true;
+                } else if (canAppear) {
                     $("header > nav").fadeIn();
+                }
+                if (canAppear) {
+                    for (var i = 0; i < appears.length; i++) {
+                        if (scrollY + innerHeight > $(appears[i]).offset().top + $(appears[i]).height() / 2 && scrollY < $(appears[i]).offset().top + $(appears[i]).height() / 2) {
+                            $(appears[i]).animate({
+                                left: "0px"
+                            });
+                        }
+                    }
                 }
             });
             $("#startNavigation").click(function(){
@@ -84,63 +103,69 @@
             </div>
         </section>
         <div id="startMarker"></div>
-        <section class="card-deck mt-5">
-            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus gostos</h2>
-            <div class="card">
-                <img class="card-img-top" src="dnd.jpg" alt="Dungeons and Dragons">
-                <div class="card-body">
-                    <p class="card-text">Gosto de assistir vídeos aleatórios de linux e RPG, programar e jogar</p>
+        <section class="mt-5 appear">
+            <div class="card-deck">
+                <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus gostos</h2>
+                <div class="card">
+                    <img class="card-img-top" src="dnd.jpg" alt="Dungeons and Dragons">
+                    <div class="card-body">
+                        <p class="card-text">Gosto de assistir vídeos aleatórios de linux e RPG, programar e jogar</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="parkour.jpg" alt="Meme de parkour">
-                <div class="card-body">
-                    <p class="card-text">Gosto de lutar judô, nadar e praticar qualquer outra atividade física (menos aquelas como futebol, vôlei, basquete e etc)</p>
+                <div class="card">
+                    <img class="card-img-top" src="parkour.jpg" alt="Meme de parkour">
+                    <div class="card-body">
+                        <p class="card-text">Gosto de lutar judô, nadar e praticar qualquer outra atividade física (menos aquelas como futebol, vôlei, basquete e etc)</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="desafio.png" alt="Pessoa se desafiando">
-                <div class="card-body">
-                    <p class="card-text">Gosto de desafios físicos e mentais, apesar de ser preguiçoso quando aquilo não me é interessante</p>
+                <div class="card">
+                    <img class="card-img-top" src="desafio.png" alt="Pessoa se desafiando">
+                    <div class="card-body">
+                        <p class="card-text">Gosto de desafios físicos e mentais, apesar de ser preguiçoso quando aquilo não me é interessante</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="eletronica.jpg" alt="Placa eletrônica">
-                <div class="card-body">
-                    <p class="card-text">Tenho um grande interesse em tecnologia eletrônica e qualquer outro conhecimento físico, químico e/ou matemático</p>
+                <div class="card">
+                    <img class="card-img-top" src="eletronica.jpg" alt="Placa eletrônica">
+                    <div class="card-body">
+                        <p class="card-text">Tenho um grande interesse em tecnologia eletrônica e qualquer outro conhecimento físico, químico e/ou matemático</p>
+                    </div>
                 </div>
             </div>
         </section>
         <div id="achievementMarker"></div>
-        <section class="card-deck mt-5">
-            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Minhas conquistas</h2>
-            <div class="card">
-                <img class="card-img-top" src="medalhas.jpg" alt="Coleção de medalhas">
-                <div class="card-body">
-                    <p class="card-text">Já juntei mais de 120 medalhas de judô/natação e, se não me engano, já fui vice-campeão inter-regional de judô</p>
+        <section class="mt-5 appear">
+            <div class="card-deck">
+                <h2 style="margin: auto; width: 100%;" class="text-center my-3">Minhas conquistas</h2>
+                <div class="card">
+                    <img class="card-img-top" src="medalhas.jpg" alt="Coleção de medalhas">
+                    <div class="card-body">
+                        <p class="card-text">Já juntei mais de 120 medalhas de judô/natação e, se não me engano, já fui vice-campeão inter-regional de judô</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="flutter.png" alt="Flutter">
-                <div class="card-body">
-                    <p class="card-text">Comecei a gostar de informática quando entrei no IF e agora já consegui um estágio desenvolvendo apps em flutter</p>
+                <div class="card">
+                    <img class="card-img-top" src="flutter.png" alt="Flutter">
+                    <div class="card-body">
+                        <p class="card-text">Comecei a gostar de informática quando entrei no IF e agora já consegui um estágio desenvolvendo apps em flutter</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="olimpiada.png" alt="OBMEP">
-                <div class="card-body">
-                    <p class="card-text">Já ganhei diversas medalhas e participações em olimpíadas escolares, sendo que a mais recente foi a "chave de prata" da IPhCO 2021</p>
+                <div class="card">
+                    <img class="card-img-top" src="olimpiada.png" alt="OBMEP">
+                    <div class="card-body">
+                        <p class="card-text">Já ganhei diversas medalhas e participações em olimpíadas escolares, sendo que a mais recente foi a "chave de prata" da IPhCO 2021</p>
+                    </div>
                 </div>
             </div>
         </section>
         <div id="planMarker"></div>
-        <section class="card-deck my-5">
-            <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus planos</h2>
-            <div class="card">
-            <div class="card-body">
-                <p class="card-text">- Eu pretendo continuar meus estudos na área de tecnologia, principalmente informática/eletrônica.</p>
-                <p class="card-text">- Eu também quero continuar aprimorando meu inglês, japonês, soft skills e quaisquer outras coisas necessárias para ser competitivo no mercado de trabalho</p>
-            </div>
+        <section class="my-5 appear">
+            <div class="card-deck">
+                <h2 style="margin: auto; width: 100%;" class="text-center my-3">Meus planos</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">- Eu pretendo continuar meus estudos na área de tecnologia, principalmente informática/eletrônica.</p>
+                        <p class="card-text">- Eu também quero continuar aprimorando meu inglês, japonês, soft skills e quaisquer outras coisas necessárias para ser competitivo no mercado de trabalho</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
