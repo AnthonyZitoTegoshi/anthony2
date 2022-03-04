@@ -34,26 +34,21 @@
     <script>
         $(document).ready(function () {
             var appears = document.getElementsByClassName("appear");
-            var canAppear = false;
             $('.appear').animate({
                 left: "-" + innerWidth + "px"
             });
-            scrollTo(0, 0);
             $("header > nav").hide();
             $(window).scroll(function () {
                 if (scrollY == 0) {
                     $("header > nav").fadeOut();
-                    canAppear = true;
-                } else if (canAppear) {
+                } else {
                     $("header > nav").fadeIn();
                 }
-                if (canAppear) {
-                    for (var i = 0; i < appears.length; i++) {
-                        if (scrollY + innerHeight > $(appears[i]).offset().top + $(appears[i]).height() / 2 && scrollY < $(appears[i]).offset().top + $(appears[i]).height() / 2) {
-                            $(appears[i]).animate({
-                                left: "0px"
-                            });
-                        }
+                for (var i = 0; i < appears.length; i++) {
+                    if (scrollY + innerHeight > $(appears[i]).offset().top + $(appears[i]).height() / 2 && scrollY < $(appears[i]).offset().top + $(appears[i]).height() / 2) {
+                        $(appears[i]).animate({
+                            left: "0px"
+                        });
                     }
                 }
             });
